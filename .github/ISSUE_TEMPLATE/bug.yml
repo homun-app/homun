@@ -1,0 +1,124 @@
+name: 🐛 Bug report
+description: Something broke or behaves unexpectedly
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please be as specific as possible — vague reports are hard to act on.
+
+        **Before opening**: please search [existing issues](https://github.com/homun-app/homun/issues?q=is%3Aissue) to avoid duplicates.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect to happen instead?
+      placeholder: |
+        When I tried to ... Homun did ... instead of ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps to reproduce the issue. The more specific, the faster we can fix it.
+      placeholder: |
+        1. Run `homun gateway`
+        2. Open the web UI at http://localhost:8777
+        3. Click on ...
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened? Include exact error messages if any.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Homun version
+      description: Output of `homun --version`
+      placeholder: "e.g., homun 1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS (Apple Silicon / arm64)
+        - macOS (Intel / x64)
+        - Ubuntu / Debian (amd64)
+        - Ubuntu / Debian (arm64)
+        - Fedora / RHEL / Rocky Linux
+        - Windows 11 + WSL2
+        - Other (specify in Additional context)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installer
+    attributes:
+      label: Installation method
+      options:
+        - macOS .dmg (direct download)
+        - Homebrew (homun-app/tap)
+        - .deb package
+        - .rpm package
+        - Docker
+        - Build from source
+        - Other (specify in Additional context)
+    validations:
+      required: true
+
+  - type: input
+    id: trace_id
+    attributes:
+      label: Trace ID (optional but very helpful)
+      description: |
+        If the failure happened in the web UI or via a channel, the trace ID is visible in the dashboard timeline or logs.
+        Run `grep trace_id ~/.homun/logs/*.log | tail -5` to find recent trace IDs.
+      placeholder: "e.g., a1b2c3d4"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: |
+        Paste relevant log output. Please **redact any secrets, API keys, or PII** before pasting.
+        The log level for more detail: `RUST_LOG=debug homun gateway`
+      render: shell
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, videos, configuration snippets (with secrets redacted), anything else that helps us understand the issue.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: I searched existing issues and this is not a duplicate
+          required: true
+        - label: I redacted any secrets, API keys, and PII from my logs and configuration
+          required: true
+        - label: I am running the latest released version (or a specific version I've noted above)
+          required: true
