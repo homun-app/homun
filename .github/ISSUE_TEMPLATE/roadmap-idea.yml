@@ -1,0 +1,63 @@
+name: Product idea
+description: Suggest a user problem or direction for Homun to explore
+title: "[Idea]: "
+labels:
+  - idea
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping shape Homun. Ideas are reviewed before they appear on the public roadmap. Votes are advisory and do not create delivery commitments.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the situation and who experiences it.
+      placeholder: When I am..., I need..., because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: value
+    attributes:
+      label: What would become easier or possible?
+      description: Focus on the user outcome rather than a technical implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_alternative
+    attributes:
+      label: What do you do today?
+      description: Share any workaround or alternative you currently use.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Product area
+      options:
+        - Agent
+        - Apps
+        - Automations
+        - Chat
+        - Collaboration
+        - Input
+        - Local computer
+        - Models
+        - Plugins
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find the same idea.
+          required: true
+        - label: I understand this proposal may be merged, archived, or kept off the public roadmap after moderation.
+          required: true
