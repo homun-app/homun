@@ -90,7 +90,7 @@ promises, and version-specific installer filenames.
 
 Replace the private-source contribution model with the current public-source model:
 
-- product ideas use the structured idea form;
+- product ideas use the structured GitHub issue form;
 - bugs and crashes use their issue forms;
 - general questions use Discussions;
 - source changes belong in `homun-core`;

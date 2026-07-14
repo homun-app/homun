@@ -99,7 +99,7 @@ requirements and installation steps.
 - [Report a security vulnerability privately](./SECURITY.md)
 
 Ideas are reviewed before they appear on the public roadmap. Voting opens on accepted
-ideas with a public GitHub discussion, and votes remain advisory.
+ideas with a public GitHub issue, and votes remain advisory.
 
 ## Repository map
 
@@ -340,7 +340,7 @@ body:
     attributes:
       label: Homun version
       description: Find it in Settings → About & version.
-      placeholder: 0.1.1059
+      placeholder: Copy the exact version shown in Settings
     validations:
       required: true
   - type: dropdown
@@ -426,7 +426,7 @@ body:
     attributes:
       label: Homun version
       description: Find it in Settings → About & version.
-      placeholder: 0.1.1059
+      placeholder: Copy the exact version shown in Settings
     validations:
       required: true
   - type: dropdown
