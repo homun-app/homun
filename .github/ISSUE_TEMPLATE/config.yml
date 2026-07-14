@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 Feature request or general question
+  - name: 💬 General question or community discussion
     url: https://github.com/homun-app/homun/discussions
-    about: Please open a discussion first — we discuss problems before solutions. If the discussion lands on "yes, this is in scope", we'll open an issue from there.
+    about: Ask for help, share how you use Homun, or discuss a topic that is not a product proposal.
   - name: 🔒 Security vulnerability
     url: https://github.com/homun-app/homun/security/advisories/new
-    about: Do NOT open public issues for security vulnerabilities. Use GitHub Security Advisories or email security@homun.app.
+    about: Do not open public issues for vulnerabilities. Use a private advisory or email security@homun.app.
   - name: 📖 Documentation and usage help
-    url: https://homun.dev
-    about: Installation guides, configuration examples, and tutorials are on the project website.
+    url: https://homun.app/docs
+    about: Read current installation guides, product documentation, and reference material.

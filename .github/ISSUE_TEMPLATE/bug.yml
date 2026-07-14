@@ -1,124 +1,90 @@
 name: 🐛 Bug report
-description: Something broke or behaves unexpectedly
+description: Something in the Homun desktop app is not working as expected
 labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! Please be as specific as possible — vague reports are hard to act on.
-
-        **Before opening**: please search [existing issues](https://github.com/homun-app/homun/issues?q=is%3Aissue) to avoid duplicates.
-
+        Thanks for reporting a problem. Search existing issues first and do not include credentials or private data.
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: What happened? What did you expect to happen instead?
-      placeholder: |
-        When I tried to ... Homun did ... instead of ...
+      label: What happened?
+      description: Briefly describe the problem.
     validations:
       required: true
-
   - type: textarea
     id: steps
     attributes:
       label: Steps to reproduce
-      description: Minimal steps to reproduce the issue. The more specific, the faster we can fix it.
       placeholder: |
-        1. Run `homun gateway`
-        2. Open the web UI at http://localhost:8777
-        3. Click on ...
-        4. Observe ...
+        1. Open...
+        2. Choose...
+        3. Observe...
     validations:
       required: true
-
   - type: textarea
     id: expected
     attributes:
       label: Expected behavior
-      description: What should have happened?
     validations:
       required: true
-
   - type: textarea
     id: actual
     attributes:
       label: Actual behavior
-      description: What actually happened? Include exact error messages if any.
     validations:
       required: true
-
   - type: input
     id: version
     attributes:
       label: Homun version
-      description: Output of `homun --version`
-      placeholder: "e.g., homun 1.0.0"
+      description: Find it in Settings → About & version.
+      placeholder: Copy the exact version shown in Settings
     validations:
       required: true
-
   - type: dropdown
     id: os
     attributes:
       label: Operating system
       options:
-        - macOS (Apple Silicon / arm64)
-        - macOS (Intel / x64)
-        - Ubuntu / Debian (amd64)
-        - Ubuntu / Debian (arm64)
-        - Fedora / RHEL / Rocky Linux
-        - Windows 11 + WSL2
-        - Other (specify in Additional context)
+        - macOS
+        - Windows
+        - Linux
+        - Other
     validations:
       required: true
-
   - type: dropdown
     id: installer
     attributes:
-      label: Installation method
+      label: Installation package
       options:
-        - macOS .dmg (direct download)
-        - Homebrew (homun-app/tap)
-        - .deb package
-        - .rpm package
-        - Docker
-        - Build from source
-        - Other (specify in Additional context)
+        - macOS .dmg
+        - Windows .exe
+        - Linux .AppImage
+        - Linux .deb
+        - Other
     validations:
       required: true
-
-  - type: input
-    id: trace_id
-    attributes:
-      label: Trace ID (optional but very helpful)
-      description: |
-        If the failure happened in the web UI or via a channel, the trace ID is visible in the dashboard timeline or logs.
-        Run `grep trace_id ~/.homun/logs/*.log | tail -5` to find recent trace IDs.
-      placeholder: "e.g., a1b2c3d4"
-
   - type: textarea
-    id: logs
+    id: diagnostics
     attributes:
-      label: Relevant logs
+      label: Diagnostic archive (optional)
       description: |
-        Paste relevant log output. Please **redact any secrets, API keys, or PII** before pasting.
-        The log level for more detail: `RUST_LOG=debug homun gateway`
-      render: shell
-
+        In Homun, open Settings → Report a problem and create the archive. Review it before attaching it: technical logs may contain file paths or message fragments. Redact anything you do not want to publish, then drag the archive here.
   - type: textarea
     id: context
     attributes:
       label: Additional context
-      description: Screenshots, videos, configuration snippets (with secrets redacted), anything else that helps us understand the issue.
-
+      description: Add screenshots or other details that help reproduce the problem.
   - type: checkboxes
     id: checks
     attributes:
-      label: Pre-submission checklist
+      label: Before submitting
       options:
-        - label: I searched existing issues and this is not a duplicate
+        - label: I searched existing issues and did not find the same problem.
           required: true
-        - label: I redacted any secrets, API keys, and PII from my logs and configuration
+        - label: I am using the latest released version, or I identified the exact older version above.
           required: true
-        - label: I am running the latest released version (or a specific version I've noted above)
+        - label: I reviewed attachments and removed credentials and private data.
           required: true
