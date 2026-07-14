@@ -1,116 +1,63 @@
 # Homun
 
-**Your personal AI assistant. Single binary. Privacy-first. Local-first. Multi-channel.**
+**Your work. Your models. Your system.**
 
-Homun is a digital homunculus that lives on your machine and works 24/7. Manage it from Telegram, WhatsApp, Discord, Slack, Email, a Web dashboard, or the CLI. It learns from you, runs automations while you sleep, browses the web, and extends via the open Agent Skills ecosystem.
+Homun is a local-first desktop assistant that helps you work across conversations,
+files, tools, automations, and connected services while keeping you in control of
+what it can access and do.
 
-> This is the **public face** of Homun — the home for issues, releases, discussions, and user-facing documentation.
->
-> - 📦 **Source code**: private (`homun-app/homun-core`) under the [PolyForm Noncommercial License](https://polyformproject.org/licenses/noncommercial/1.0.0/). See [CONTRIBUTING](#contributing) below for security audit access.
-> - 🌐 **Website**: [homun.dev](https://homun.dev)
-> - 📋 **Changelog**: [CHANGELOG.md](https://github.com/homun-app/homun/blob/main/CHANGELOG.md)
-> - 🚀 **Latest release**: [releases/latest](https://github.com/homun-app/homun/releases/latest)
+[Website](https://homun.app) ·
+[Documentation](https://homun.app/docs) ·
+[Roadmap](https://homun.app/roadmap) ·
+[Download](https://github.com/homun-app/homun-releases/releases/latest) ·
+[Source](https://github.com/homun-app/homun-core)
 
----
+## Why Homun
 
-## Quick install
+- **Local-first ownership** — your data and working context stay on your machine by default.
+- **Your choice of models** — use local, open-source, or cloud providers.
+- **Controlled action** — tools, connectors, and automations operate through explicit permissions.
+- **Visible work** — follow plans, tool use, and progress while Homun works.
 
-### macOS
+## Download
 
-Download the latest `.dmg` from [GitHub Releases](https://github.com/homun-app/homun/releases/latest), drag `Homun.app` onto `Applications`, launch. The web dashboard opens at `http://localhost:8777`.
+Current installers are published in
+[homun-app/homun-releases](https://github.com/homun-app/homun-releases/releases/latest).
 
-Or via **Homebrew**:
+- macOS: Apple Silicon `.dmg`
+- Windows: x64 `.exe`
+- Linux: x86_64 `.AppImage` or amd64 `.deb`
 
-```bash
-brew install homun-app/tap/homun
-homun gateway
-```
-
-### Linux (Debian / Ubuntu)
-
-```bash
-curl -LO https://github.com/homun-app/homun/releases/latest/download/homun_1.0.0-1_amd64.deb
-sudo apt install ./homun_1.0.0-1_amd64.deb
-sudo -u homun homun gateway &
-```
-
-arm64 also available — substitute `amd64` with `arm64` in the URL.
-
-### Linux (Fedora / RHEL / Rocky)
-
-```bash
-sudo dnf install https://github.com/homun-app/homun/releases/latest/download/homun-1.0.0-1.x86_64.rpm
-sudo -u homun homun gateway &
-```
-
-### Windows (via WSL2)
-
-Windows is supported via Windows Subsystem for Linux 2. Full walkthrough: **[docs/INSTALL-WINDOWS-WSL.md](https://github.com/homun-app/homun/blob/main/docs/INSTALL-WINDOWS-WSL.md)** (~15 minutes).
-
-> A native Windows `.msi` installer is not provided in v1.0 — cost-driven rescope, see the changelog for details.
-
-Once installed, open **http://localhost:8777** in your browser and complete the setup wizard.
-
----
-
-## What you get
-
-- **Multi-channel** — 7 channels: CLI, Telegram, WhatsApp, Discord, Slack, Email, Web WebSocket
-- **14+ LLM providers** — Anthropic, OpenAI, Ollama (local), OpenRouter, DeepSeek, Groq, Gemini, Mistral, Together, Fireworks, and more
-- **Long-term memory** — short-term session + long-term LLM-consolidated summaries, hybrid HNSW + FTS5 + RRF search
-- **Knowledge base (RAG)** — ingest 30+ formats with vault-gating for sensitive data
-- **23+ built-in tools** — shell, files, web search, browser automation, vault, email, scheduling, workflows, contacts
-- **Automations** — visual flow builder (n8n-style SVG canvas), NLP flow generation
-- **Workflow engine** — persistent multi-step workflows with approval gates and retry logic
-- **Browser automation** — Playwright-powered headless browser, stealth injection, 21 unified actions
-- **Skills ecosystem** — open Agent Skills standard, GitHub install, ClawHub marketplace
-- **MCP integration** — connect external services via Model Context Protocol, OAuth + vault-resolved credentials
-- **Security** — AES-256-GCM vault, 2FA TOTP, sandboxed execution (5 backends), exfiltration guard, emergency kill switch
-- **Mobile app** — Flutter thread-first UX with inline approval blocks, biometric lock
-- **Observability** — `/metrics` Prometheus endpoint, end-to-end X-Request-ID tracing, panic handler with redacted crash reports, daily update checker
-- **Web dashboard** — 29 pages covering every aspect of the agent
-
----
-
-## Documentation
-
-- **[Changelog](./CHANGELOG.md)** — all notable changes
-- **[Contributing](./CONTRIBUTING.md)** — how to report bugs and propose features
-- **[Security policy](./SECURITY.md)** — vulnerability reporting
-- **[homun.dev](https://homun.dev)** — project website with screenshots, guides, and community
-
----
-
-## Contributing
-
-Homun is **source-private, user-visible**:
-
-- ✅ **Welcome**: bug reports, feature discussions, crash reports, documentation improvements
-- ❌ **Not accepted**: public pull requests to the source (because there is no public source)
-- 🔒 **Security audit access**: researchers can request read-only access to `homun-app/homun-core` — email `security@homun.app`
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for details. Read it before opening an issue or discussion so you know the license model.
-
----
-
-## Report a bug
-
-Use [GitHub Issues](https://github.com/homun-app/homun/issues/new/choose) — the templates guide you through the required fields.
-
-For security vulnerabilities, **do not open public issues**. See [SECURITY.md](./SECURITY.md).
-
----
+See the [download guide](https://homun.app/guides/download/) for current platform
+requirements and installation steps.
 
 ## Community
 
-- 💬 [GitHub Discussions](https://github.com/homun-app/homun/discussions) — feature requests, Q&A, show-and-tell
-- 🐛 [Issues](https://github.com/homun-app/homun/issues) — bug reports, crash reports
-- 📣 [homun.dev](https://homun.dev) — announcements and release notes
+- [Suggest a product idea](https://github.com/homun-app/homun/issues/new?template=roadmap-idea.yml)
+- [Report a bug or crash](https://github.com/homun-app/homun/issues/new/choose)
+- [Ask a question or start a discussion](https://github.com/homun-app/homun/discussions)
+- [Report a security vulnerability privately](./SECURITY.md)
 
----
+Ideas are reviewed before they appear on the public roadmap. Voting opens on accepted
+ideas with a public GitHub issue, and votes remain advisory.
+
+## Repository map
+
+| Repository | Responsibility |
+| --- | --- |
+| [`homun`](https://github.com/homun-app/homun) | Public product, community ideas, support, and security intake |
+| [`homun-core`](https://github.com/homun-app/homun-core) | Desktop application source and engineering work |
+| [`homun-releases`](https://github.com/homun-app/homun-releases) | Installers, updater metadata, and published releases |
+| [`website`](https://github.com/homun-app/website) | Website, public documentation, roadmap, and changelog |
+
+## Legacy releases
+
+The `v1.0.x` releases stored in this repository belong to an earlier Homun architecture
+and remain available for historical reference. Current desktop releases are published
+only in [`homun-app/homun-releases`](https://github.com/homun-app/homun-releases/releases).
 
 ## License
 
-The documentation and templates in this public repository are released under the **MIT License** (see [LICENSE](./LICENSE)). This allows anyone to fork and adapt the docs freely.
-
-The actual **source code** of Homun lives in the private `homun-app/homun-core` repository under the **[PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/)** — free for personal and non-commercial use.
+The documentation and GitHub templates in this repository use the [MIT License](./LICENSE).
+The Homun source code has its own license in
+[`homun-core/LICENSE.md`](https://github.com/homun-app/homun-core/blob/main/LICENSE.md).
